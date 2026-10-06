@@ -1,9 +1,8 @@
-#include "array_helper.h"
+#pragma once
 
+using ReplaceFunction = void (*)(int*, int, int, double);
+
+#ifdef ARRAY_HELPER_EXPORTS
 extern "C" __declspec(dllexport) void replaceElements(
-    int* numbers, int minIndex, int maxIndex, double average)
-{
-    int value = static_cast<int>(average);
-    numbers[minIndex] = value;
-    numbers[maxIndex] = value;
-}
+    int* numbers, int minIndex, int maxIndex, double average);
+#endif
